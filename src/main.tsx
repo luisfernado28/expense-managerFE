@@ -4,7 +4,7 @@ import App from './App';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
-
+document.title = import.meta.env.VITE_APP_NAME || "Default Title";
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
