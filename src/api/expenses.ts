@@ -7,5 +7,6 @@ const api = axios.create({
 
 export const getExpenses = async (): Promise<Expense[]> => {
   const res = await api.get('/Expense');
+  console.log('data:', res);
   return res.data;
 };

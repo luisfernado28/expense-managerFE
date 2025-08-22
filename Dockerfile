@@ -13,6 +13,8 @@ RUN npm install
 RUN npm i -g serve
 # Copy the rest of the application code
 COPY . .
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
 RUN npm run build
 # Expose the port Vite typically uses (or the one you configured in vite.config.js)
 EXPOSE 3000
