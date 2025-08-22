@@ -32,14 +32,22 @@ export default function Dashboard() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data?.map((expense) => (
-              <TableRow key={expense.id}>
-                <TableCell>{expense.purchase}</TableCell>
-                <TableCell>{expense.category}</TableCell>
-                <TableCell>{expense.category}</TableCell>
-                <TableCell align="right">${expense.amount}</TableCell>
+            {data && data.length > 0 ? (
+              data.map((expense) => (
+                <TableRow key={expense.id}>
+                  <TableCell>{expense.purchase}</TableCell>
+                  <TableCell>{expense.category}</TableCell>
+                  <TableCell>{expense.category}</TableCell>
+                  <TableCell align="right">${expense.amount}</TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={4} align="center">
+                  No expenses found.
+                </TableCell>
               </TableRow>
-            ))}
+            )}
           </TableBody>
         </Table>
       </Paper>
