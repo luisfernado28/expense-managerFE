@@ -6,6 +6,7 @@ const api = axios.create({
 });
 
 export const getExpenses = async (): Promise<Expense[]> => {
+  console.log("URL desde afuera: "+import.meta.env.VITE_API_URL);
   const res = await api.get('/Expense');
   console.log('data:', res);
   return res.data;
