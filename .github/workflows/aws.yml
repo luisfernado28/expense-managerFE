@@ -14,6 +14,9 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
 
+        - name: Set VITE_API_URL from secret
+          run: echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> $GITHUB_ENV  
+
         - run: npm ci && npm run build
 
         - name: Configure AWS credentials
